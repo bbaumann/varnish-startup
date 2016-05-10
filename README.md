@@ -4,4 +4,4 @@ Ce projet contient les scripts nécessaires au démarrage du daemon varnish sur 
 
 ## ATTENTION
 
-Je ne suis pas l'auteur de ces scripts. Ils sont fournis"tels quels.
+Je ne suis pas l'auteur de ces scripts. Ils sont fournis "tels quels".
