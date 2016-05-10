@@ -1,3 +1,5 @@
+#Author: François Serreau
+
 backend default  {
         .host = "10.196.XXX.XX";
         .port = "80";
