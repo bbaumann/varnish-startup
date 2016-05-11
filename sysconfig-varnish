@@ -38,10 +38,10 @@ VARNISH_ADMIN_LISTEN_PORT=6082
 # Shared secret file for admin interface
 VARNISH_SECRET_FILE=/etc/varnish/secret
 #
-# The minimum number of worker threads to start
+# The minimum number of worker threads to start (by thread pool)
 VARNISH_MIN_THREADS=100
 #
-# The Maximum number of worker threads to start
+# The Maximum number of worker threads to start (by thread pool)
 VARNISH_MAX_THREADS=4000
 
 # Idle timeout for worker threads
