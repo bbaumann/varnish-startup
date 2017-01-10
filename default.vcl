@@ -11,14 +11,8 @@ sub set_backends {
 
 #Hosts allowed to purge the cache
 acl acl_purge {
-        # localhost
         "127.0.0.1";
-        # postes bureautiques STI
-        "10.196.XXX.0"/25;
-        # postes bureautiques Prodstaff/SNSI
         "10.196.XXX.0"/24;
-        # EUISAFR019 Contient l outil de decache
-        "10.196.XXX.XXX";
 }
 
 sub vcl_recv {
@@ -35,15 +29,6 @@ sub vcl_recv {
         # Gestion du Healthcheck
         if ( req.http.host == "healthcheck" ) {
                 return (synth(204, "No Content"));
-        }
-
-        #Gestion du X-Forwarded-For
-        if ( req.restarts == 0 ) {
-                if (req.http.x-forwarded-for) {
-                        set req.http.X-Forwarded-For = req.http.X-Forwarded-For + ", " + client.ip;
-                } else {
-                        set req.http.X-Forwarded-For = client.ip;
-                }
         }
 
         # Manage PURGE request
